@@ -1,0 +1,4 @@
+gvcffile:
+  class: File
+  path: /Users/jdeligt/code/CWL/message.yaml
+  location: http://
