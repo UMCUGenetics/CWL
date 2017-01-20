@@ -15,5 +15,5 @@ class: CommandLineTool
     - /
   inputs: []
   output:
-    ouput:
+    my_output:
       type: stdout
