@@ -1,0 +1,38 @@
+{
+    "CREATE_INDEX": "true",
+    "ReadGroupID": "12345",
+    "ReadGroupLibrary": "WES",
+    "ReadGroupPlatform": "illumina",
+    "ReadGroupPlatformUnit": "PU",
+    "ReadGroupSampleName": "na12878",
+    "format": "bam",
+    "gatk_jar": {
+        "class": "File",
+        "path": "/Users/tschafers/jar/GenomeAnalysisTK-3.7-0-gcfedb67/GenomeAnalysisTK.jar"
+    },
+    "metricsFile": "metrics.txt",
+    "out_bam_name": "sample.bam",
+    "out_name": "sample.sort",
+    "output": "sample.dedup.RG.bam",
+    "outputFileName_markDups": "sample.dedup.bam",
+    "output_filename": "sample.sam",
+    "outputfile_HaplotypeCaller": "out.vcf",
+    "reads": [
+        {
+            "class": "File",
+            "path": "/home/ubuntu/external/datafiles/na12878_wes_brcagenes-1.fastq"
+        },
+        {
+            "class": "File",
+            "path": "/home/ubuntu/external/datafiles/na12878_wes_brcagenes-2.fastq"
+        }
+    ],
+    "reference": {
+        "class": "File",
+        "path": "/Users/tschafers/rabix/rabix/tests/test-files/example_human_reference.fasta"
+    },
+    "targetsIntervalList": {
+        "class": "File",
+        "path": "/home/ubuntu/external/datafiles/brca_genes.bed"
+    }
+}

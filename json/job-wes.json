@@ -1,0 +1,36 @@
+{
+    "CREATE_INDEX": "true",
+    "ReadGroupID": "ID12345",
+    "ReadGroupLibrary": "WES",
+    "ReadGroupPlatform": "illumina",
+    "ReadGroupPlatformUnit": "PU1",
+    "ReadGroupSampleName": "na12878",
+    "format": "bam",
+    "metricsFile": "dedubbed.metrics.txt",
+    "out_bam_name": "sample.bam",
+    "out_name": "sample.sort.bam",
+    "output": "sample.dedubbed.RG.bam",
+    "outputFileName_markDups": "sample.dedubbed.bam",
+    "output_filename": "sample.sam",
+    "reads": [
+        {
+            "class": "File",
+            "metadata": {},
+            "path": "/home/ubuntu/rabix/rabix/tests/test-files/example_human_Illumina.pe_1.fastq",
+            "secondaryFiles": []
+        },
+        {
+            "class": "File",
+            "metadata": {},
+            "path": "/home/ubuntu/rabix/rabix/tests/test-files/example_human_Illumina.pe_2.fastq",
+            "secondaryFiles": []
+        }
+    ],
+    "reference": {
+        "class": "File",
+        "metadata": {},
+        "path": "/home/ubuntu/rabix/rabix/tests/test-files/example_human_reference.fasta",
+        "secondaryFiles": []
+    }
+}
+
