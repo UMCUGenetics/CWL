@@ -1,6 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: wes_map_process_cwl
+doc: Whole exom sequencing pre-processing workflow
 label: WES_map_process.cwl
 $namespaces:
   sbg: 'https://www.sevenbridges.com'
@@ -160,3 +161,5 @@ steps:
     'sbg:x': 381.8963317871094
     'sbg:y': 43.02603530883789
 requirements: []
+'sbg:toolAuthor': TIlman Schaefers
+'sbg:license': Apache 2.0
