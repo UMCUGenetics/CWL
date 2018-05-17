@@ -1,6 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: rna_seq
+doc: RNA-seq preprocessing workflow
 label: RNA-seq
 $namespaces:
   sbg: 'https://www.sevenbridges.com'
@@ -172,3 +173,5 @@ steps:
     'sbg:x': 615.711669921875
     'sbg:y': 46.5
 requirements: []
+'sbg:toolAuthor': Tilman Schaefers
+'sbg:license': Apache 2.0

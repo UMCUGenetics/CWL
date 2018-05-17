@@ -1,6 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
 id: wes_map_process_cwl
+doc: Whole exom sequencing pre-processing workflow + GATK HaplotypeCaller
 label: WES_map_process.cwl
 $namespaces:
   sbg: 'https://www.sevenbridges.com'
@@ -188,3 +189,5 @@ steps:
     'sbg:x': 949.135986328125
     'sbg:y': 17.43975830078125
 requirements: []
+'sbg:toolAuthor': Tilman Schaefers
+'sbg:license': Apache 2.0
