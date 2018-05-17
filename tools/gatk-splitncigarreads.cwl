@@ -36,9 +36,15 @@ inputs:
     inputBinding:
       position: 7
       prefix: '-U'
-outputs: []
+outputs:
+  - id: bam_out
+    type: File?
+    outputBinding:
+      glob: $(inputs.output)
 label: GATK-SplitNCigarReads
 arguments:
   - position: 3
     prefix: '-T'
     valueFrom: SplitNCigarReads
+requirements:
+  - class: InlineJavascriptRequirement
