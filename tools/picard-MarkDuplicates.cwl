@@ -200,3 +200,9 @@ arguments:
 requirements:
   - class: ShellCommandRequirement
   - class: InlineJavascriptRequirement
+'sbg:toolkit': Picard
+'sbg:toolAuthor': 'Farah Zaib Khan, Sehrish Kanwal'
+'sbg:license': Apache 2.0
+'sbg:wrapperAuthor': ''
+'sbg:wrapperLicense': ''
+'sbg:toolkitVersion': MarkDuplicates

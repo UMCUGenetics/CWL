@@ -48,3 +48,9 @@ arguments:
     valueFrom: SplitNCigarReads
 requirements:
   - class: InlineJavascriptRequirement
+'sbg:toolkit': GATK
+'sbg:toolAuthor': Tilman Schaefers
+'sbg:license': Apache 2.0
+'sbg:wrapperAuthor': ''
+'sbg:wrapperLicense': ''
+'sbg:toolkitVersion': SplitNCigarReads

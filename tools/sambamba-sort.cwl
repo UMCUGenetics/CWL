@@ -25,8 +25,9 @@ doc: CWL implementation of Sambamba sort subcommand
 label: sambamba sort
 requirements:
   - class: InlineJavascriptRequirement
+'sbg:license': Apache 2.0
+'sbg:toolAuthor': Tilman Schaefers
 'sbg:toolkit': Sambamba
-'sbg:toolAuthor': Artem Tarasov
-'sbg:license': GPL 2.0
-'sbg:wrapperAuthor': Tilman Schaefers
-'sbg:wrapperLicense': MIT
+'sbg:wrapperAuthor': ''
+'sbg:wrapperLicense': ''
+'sbg:toolkitVersion': sort

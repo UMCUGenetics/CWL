@@ -73,6 +73,10 @@ hints:
     envDef:
       - envName: PATH
         envValue: '/usr/local/bin/:/usr/bin:/bin'
-
 requirements:
   - class: InlineJavascriptRequirement
+'sbg:toolkit': GATK
+'sbg:toolAuthor': h3abionet
+'sbg:license': Apache 2.0
+'sbg:toolkitVersion': SelectVariants
+'sbg:wrapperAuthor': ''
