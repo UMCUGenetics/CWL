@@ -114,9 +114,9 @@ arguments:
 requirements:
   - class: ShellCommandRequirement
   - class: InlineJavascriptRequirement
-'sbg:toolkitVersion': ''
-'sbg:toolAuthor': Broad institute
-'sbg:wrapperAuthor': Tilman Schaefers
-'sbg:wrapperLicense': Apache
-'sbg:license': MIT
+'sbg:license': Apache 2.0
+'sbg:toolAuthor': Tilman Schaefers
 'sbg:toolkit': Picard
+'sbg:toolkitVersion': AddOrReplaceReadGroups
+'sbg:wrapperAuthor': ''
+'sbg:wrapperLicense': MIT

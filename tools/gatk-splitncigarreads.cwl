@@ -9,13 +9,13 @@ inputs:
   - id: java_args
     type: string
     inputBinding:
-      position: 1
-      prefix: ''
+      position: 0
   - id: gatk_jar
     type: File
     inputBinding:
       position: 2
       prefix: '-jar'
+      shellQuote: false
   - id: Reference
     type: File
     inputBinding:
@@ -47,10 +47,11 @@ arguments:
     prefix: '-T'
     valueFrom: SplitNCigarReads
 requirements:
+  - class: ShellCommandRequirement
   - class: InlineJavascriptRequirement
-'sbg:toolkit': GATK
-'sbg:toolAuthor': Tilman Schaefers
 'sbg:license': Apache 2.0
+'sbg:toolAuthor': Tilman Schaefers
+'sbg:toolkit': GATK
+'sbg:toolkitVersion': SplitNCigarReads
 'sbg:wrapperAuthor': ''
 'sbg:wrapperLicense': ''
-'sbg:toolkitVersion': SplitNCigarReads
