@@ -12,8 +12,8 @@ inputs:
     'sbg:y': 144
   - id: readFilesIn
     type: 'File[]?'
-    'sbg:x': 0
-    'sbg:y': 0
+    'sbg:x': -47.59234619140625
+    'sbg:y': -93.71746826171875
   - id: outBAMcompression
     type: int
     'sbg:exposed': true
@@ -74,6 +74,14 @@ inputs:
   - id: metricsFile
     type: string?
     'sbg:exposed': true
+  - id: gatk_jar
+    type: File
+    'sbg:x': 611.037841796875
+    'sbg:y': 371.2839660644531
+  - id: Reference
+    type: File
+    'sbg:x': 604.9028930664062
+    'sbg:y': 220.16673278808594
 outputs:
   - id: mappingstats
     outputSource:
@@ -85,14 +93,14 @@ outputs:
     outputSource:
       - picard__mark_duplicates/markDups_output_index
     type: File
-    'sbg:x': 982.1756591796875
-    'sbg:y': 0
-  - id: markDups_output
+    'sbg:x': 831.14990234375
+    'sbg:y': -110.27662658691406
+  - id: bam_out
     outputSource:
-      - picard__mark_duplicates/markDups_output
-    type: File
-    'sbg:x': 982.1756591796875
-    'sbg:y': 107
+      - gatk_splitncigarreads/bam_out
+    type: File?
+    'sbg:x': 1011.57421875
+    'sbg:y': 128.2342071533203
 steps:
   - id: _s_t_a_r
     in:
@@ -172,6 +180,32 @@ steps:
     run: ../../tools/picard-MarkDuplicates.cwl
     'sbg:x': 615.711669921875
     'sbg:y': 46.5
+  - id: gatk_splitncigarreads
+    in:
+      - id: java_args
+        default: '-Xmx4g'
+      - id: gatk_jar
+        source: gatk_jar
+      - id: Reference
+        source: Reference
+      - id: INPUT
+        source: picard__mark_duplicates/markDups_output
+      - id: OUTPUT
+        default: split.bam
+      - id: N_CIGAR
+        default: ALLOW_N_CIGAR_READS
+      - id: rf
+        default: ReassignOneMappingQuality
+      - id: RMQF
+        default: 255
+      - id: RMQT
+        default: 60
+    out:
+      - id: bam_out
+    run: ../../tools/GATK-SplitNCigarReads.cwl
+    label: GATK-SplitNCigarReads
+    'sbg:x': 831.2301635742188
+    'sbg:y': 129.27928161621094
 requirements: []
-'sbg:toolAuthor': Tilman Schaefers
 'sbg:license': Apache 2.0
+'sbg:toolAuthor': Tilman Schaefers

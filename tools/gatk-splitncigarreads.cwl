@@ -21,21 +21,36 @@ inputs:
     inputBinding:
       position: 4
       prefix: '-R'
-  - id: input
-    type: File?
+  - id: INPUT
+    type: File
     inputBinding:
       position: 5
       prefix: '-I'
-  - id: output
-    type: string?
+  - id: OUTPUT
+    type: string
     inputBinding:
       position: 6
       prefix: '-o'
-  - id: input_1
-    type: string?
+  - id: N_CIGAR
+    type: string
     inputBinding:
-      position: 7
+      position: 11
       prefix: '-U'
+  - id: rf
+    type: string
+    inputBinding:
+      position: 8
+      prefix: '-rf'
+  - id: RMQF
+    type: int
+    inputBinding:
+      position: 9
+      prefix: '-RMQF'
+  - id: RMQT
+    type: int
+    inputBinding:
+      position: 10
+      prefix: '-RMQT'
 outputs:
   - id: bam_out
     type: File?

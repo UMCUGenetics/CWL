@@ -1069,12 +1069,11 @@ inputs:
       For example: zcat - to uncompress .gz files, bzcat - to uncompress .bz2
       files, etc.
   - id: readFilesIn
-    type: 'File[]?'
+    type: 'File[]'
     inputBinding:
       position: 1
       prefix: '--readFilesIn'
-      itemSeparator: ' '
-      shellQuote: false
+      loadContents: true
     doc: >
       string(s): paths to files that contain input read1 (and, if needed, 
       read2)
