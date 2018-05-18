@@ -1,0 +1,32 @@
+{
+    "end_mode": "PE",
+    "genomeDir": {
+        "class": "Directory",
+        "path": "/Users/tschafers/vmshare/test_rnaseq/starIndex"
+    },
+    "illuminaclip": "2:30:10",
+    "input_adapters_file": {
+        "class": "File",
+        "path": "/Users/tschafers/miniconda3/pkgs/trimmomatic-0.36-5/share/trimmomatic-0.36-5/adapters/TruSeq2-PE.fa"
+    },
+    "input_read1_fastq_file": {
+        "class": "File",
+        "path": "/Users/tschafers/vmshare/test_rnaseq/fastq/TEST_R1.fastq"
+    },
+    "input_read2_fastq_file": {
+        "class": "File",
+        "path": "/Users/tschafers/vmshare/test_rnaseq/fastq/TEST_R2.fastq"
+    },
+    "java_opts": "-Xmx4g",
+    "leading": 3,
+    "log_filename": "trim.log",
+    "minlen": 36,
+    "nthreads": 4,
+    "phred": "33",
+    "slidingwindow": "4:15",
+    "trailing": 3,
+    "trimmomatic_jar_path": {
+        "class": "File",
+        "path": "/Users/tschafers/miniconda3/pkgs/trimmomatic-0.36-5/share/trimmomatic-0.36-5/trimmomatic.jar"
+    }
+}
