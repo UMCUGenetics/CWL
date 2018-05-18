@@ -1528,9 +1528,3 @@ requirements:
         entry: $(inputs.genomeDir)
         writable: true
   - class: InlineJavascriptRequirement
-'sbg:wrapperAuthor': ''
-'sbg:wrapperLicense': ''
-'sbg:license': GPL-3.0
-'sbg:toolAuthor': Andrey Kartashov
-'sbg:toolkit': STAR
-'sbg:toolkitVersion': !<tag:yaml.org,2002:js/undefined> ''
