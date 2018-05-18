@@ -8,8 +8,8 @@ $namespaces:
 inputs:
   - id: genomeDir
     type: Directory
-    'sbg:x': 1
-    'sbg:y': 144
+    'sbg:x': -18.14418601989746
+    'sbg:y': 185.02325439453125
   - id: readFilesIn
     type: 'File[]?'
     'sbg:x': -47.59234619140625
