@@ -8,8 +8,8 @@ $namespaces:
 inputs:
   - id: genomeDir
     type: Directory
-    'sbg:x': 0
-    'sbg:y': 427.3125
+    'sbg:x': 10.847018241882324
+    'sbg:y': 499.8299865722656
   - id: readFilesIn
     type: 'File[]?'
     'sbg:x': 0
@@ -82,20 +82,6 @@ inputs:
     type: File
     'sbg:x': 0
     'sbg:y': 0
-  - id: intervals
-    type: File
-    'sbg:x': 0
-    'sbg:y': 320.484375
-  - id: java_arg_1
-    type: string
-    'sbg:exposed': true
-  - id: outputfile_indelRealigner
-    type: string
-    'sbg:exposed': true
-  - id: known
-    type: 'File[]?'
-    'sbg:x': 0
-    'sbg:y': 213.65625
 outputs:
   - id: mappingstats
     outputSource:
@@ -109,12 +95,12 @@ outputs:
     type: File
     'sbg:x': 982.1131591796875
     'sbg:y': 146.2421875
-  - id: output_indelRealigner
+  - id: bam_out
     outputSource:
-      - _g_a_t_k__indel_realigner/output_indelRealigner
-    type: File
-    'sbg:x': 1521.6468505859375
-    'sbg:y': 184.8394775390625
+      - gatk_splitncigarreads/bam_out
+    type: File?
+    'sbg:x': 1293.8392333984375
+    'sbg:y': 277.2794494628906
 steps:
   - id: _s_t_a_r
     in:
@@ -220,28 +206,6 @@ steps:
     label: GATK-SplitNCigarReads
     'sbg:x': 982.1131591796875
     'sbg:y': 267.0703125
-  - id: _g_a_t_k__indel_realigner
-    in:
-      - id: gatk_jar
-        source: gatk_jar
-      - id: inputBam_realign
-        source: gatk_splitncigarreads/bam_out
-      - id: intervals
-        source: intervals
-      - id: java_arg
-        source: java_arg_1
-      - id: known
-        source:
-          - known
-      - id: outputfile_indelRealigner
-        source: outputfile_indelRealigner
-      - id: reference
-        source: Reference
-    out:
-      - id: output_indelRealigner
-    run: ../../tools/GATK-IndelRealigner.cwl
-    'sbg:x': 1226.3631591796875
-    'sbg:y': 185.65625
 requirements: []
 'sbg:license': Apache 2.0
 'sbg:toolAuthor': Tilman Schaefers
