@@ -8,12 +8,12 @@ $namespaces:
 inputs:
   - id: genomeDir
     type: Directory
-    'sbg:x': -18.14418601989746
-    'sbg:y': 185.02325439453125
+    'sbg:x': 0
+    'sbg:y': 213.9375
   - id: readFilesIn
     type: 'File[]?'
-    'sbg:x': -47.59234619140625
-    'sbg:y': -93.71746826171875
+    'sbg:x': 0
+    'sbg:y': 106.96875
   - id: outBAMcompression
     type: int
     'sbg:exposed': true
@@ -76,31 +76,35 @@ inputs:
     'sbg:exposed': true
   - id: gatk_jar
     type: File
-    'sbg:x': 611.037841796875
-    'sbg:y': 371.2839660644531
+    'sbg:x': 615.680419921875
+    'sbg:y': 160.453125
   - id: Reference
     type: File
-    'sbg:x': 604.9028930664062
-    'sbg:y': 220.16673278808594
+    'sbg:x': 100.58527374267578
+    'sbg:y': -129.1465301513672
+  - id: intervals
+    type: File
+    'sbg:x': 976.4179077148438
+    'sbg:y': -87.03282928466797
+  - id: java_arg_1
+    type: string
+    'sbg:exposed': true
+  - id: outputfile_indelRealigner
+    type: string
+    'sbg:exposed': true
 outputs:
   - id: mappingstats
     outputSource:
       - _s_t_a_r/mappingstats
     type: File?
     'sbg:x': 417.0085144042969
-    'sbg:y': 107
+    'sbg:y': 160.453125
   - id: markDups_output_index
     outputSource:
       - picard__mark_duplicates/markDups_output_index
     type: File
-    'sbg:x': 831.14990234375
-    'sbg:y': -110.27662658691406
-  - id: bam_out
-    outputSource:
-      - gatk_splitncigarreads/bam_out
-    type: File?
-    'sbg:x': 1011.57421875
-    'sbg:y': 128.2342071533203
+    'sbg:x': 982.1444091796875
+    'sbg:y': 39.484375
 steps:
   - id: _s_t_a_r
     in:
@@ -133,7 +137,7 @@ steps:
       - id: transcriptomesam
     run: ../../tools/STAR.cwl
     'sbg:x': 141.875
-    'sbg:y': 25.5
+    'sbg:y': 78.96875
   - id: picard__add_or_replace_read_groups
     in:
       - id: input
@@ -160,7 +164,7 @@ steps:
     run: ../../tools/picard-AddOrReplaceReadGroups.cwl
     label: picard-AddOrReplaceReadGroups
     'sbg:x': 417.0085144042969
-    'sbg:y': 0
+    'sbg:y': 53.484375
   - id: picard__mark_duplicates
     in:
       - id: createIndex
@@ -178,8 +182,8 @@ steps:
       - id: markDups_output
       - id: markDups_output_index
     run: ../../tools/picard-MarkDuplicates.cwl
-    'sbg:x': 615.711669921875
-    'sbg:y': 46.5
+    'sbg:x': 615.680419921875
+    'sbg:y': 46.484375
   - id: gatk_splitncigarreads
     in:
       - id: java_args
@@ -204,8 +208,27 @@ steps:
       - id: bam_out
     run: ../../tools/GATK-SplitNCigarReads.cwl
     label: GATK-SplitNCigarReads
-    'sbg:x': 831.2301635742188
-    'sbg:y': 129.27928161621094
+    'sbg:x': 982.1444091796875
+    'sbg:y': 160.453125
+  - id: _g_a_t_k__indel_realigner
+    in:
+      - id: gatk_jar
+        source: gatk_jar
+      - id: inputBam_realign
+        source: gatk_splitncigarreads/bam_out
+      - id: intervals
+        source: intervals
+      - id: java_arg
+        source: java_arg_1
+      - id: outputfile_indelRealigner
+        source: outputfile_indelRealigner
+      - id: reference
+        source: Reference
+    out:
+      - id: output_indelRealigner
+    run: ../../tools/GATK-IndelRealigner.cwl
+    'sbg:x': 1220.5821533203125
+    'sbg:y': 148.0536346435547
 requirements: []
 'sbg:license': Apache 2.0
 'sbg:toolAuthor': Tilman Schaefers
